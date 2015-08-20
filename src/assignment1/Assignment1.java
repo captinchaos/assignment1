@@ -22,6 +22,8 @@ public class Assignment1 {
         int arrayLength = 10;
         int[] array1 = new int[arrayLength];
         int[] array2 = new int[arrayLength];
+        String outputArray1 = "";
+        String outputArray2 = "";
         Scanner scan = new Scanner(System.in);
         
         System.out.println("Enter 10 number");
@@ -34,9 +36,15 @@ public class Assignment1 {
             array2[i] = array2[array2.length - i - 1];
             array2[array2.length - i - 1] = temp;
         }
-        System.out.println();
-        for (int i = 0; i < array1.length; i++) {
-            System.out.println(array1[i] + "\t" + array2[i]);
-        }
+
+        outputArray1 = java.util.Arrays.toString(array1);
+        outputArray1 = outputArray1.replaceAll("[\\[\\]]","");
+        outputArray2 = java.util.Arrays.toString(array2);
+        outputArray2 = outputArray2.replaceAll("[\\[\\]]","");
+        
+        System.out.println("\nThe first array contains:\n" + outputArray1);
+        System.out.println("\nThe second array contains:\n" + outputArray2);
+        System.out.println("\nJob Done!");
+
     }
 }
